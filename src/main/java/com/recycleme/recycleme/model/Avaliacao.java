@@ -17,7 +17,7 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table (name = "avaliacao")
+@Table (name = "tb_avaliacoes")
 public class Avaliacao {
 	
 	@Id
@@ -35,7 +35,7 @@ public class Avaliacao {
 	private Date data = new java.sql.Date(System.currentTimeMillis());
 
 	@ManyToOne
-	@JsonIgnoreProperties("usuario")
+	@JsonIgnoreProperties({"usuario", "avaliacao"})
 	private Usuario usuario;
 	
 	public Long getId() {
